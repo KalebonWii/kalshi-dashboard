@@ -15,6 +15,13 @@
     .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
     h1 { font-size: 20px; font-weight: 700; }
     .ts { color: #475569; font-size: 12px; }
+    .status-bar {
+      font-size: 12px; padding: 8px 14px; border-radius: 6px;
+      margin-bottom: 20px; border: 1px solid;
+    }
+    .status-ok   { background:#0f2e1a; border-color:#166534; color:#86efac; }
+    .status-warn { background:#2a1f00; border-color:#854d0e; color:#fde68a; }
+    .status-error{ background:#2d0a0a; border-color:#7f1d1d; color:#fca5a5; }
     .stats { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
     .stat {
       background: #1e293b; border: 1px solid #334155;
@@ -37,13 +44,15 @@
 <body>
   <div class="header">
     <h1>Kalshi Bot Dashboard</h1>
-    <span class="ts">Updated May 21, 2026  23:33 UTC</span>
+    <span class="ts">Updated May 31, 2026  06:57 UTC</span>
   </div>
+
+  <div class="status-bar status-ok">Last run: 2026-05-31 06:57 UTC &nbsp;&middot;&nbsp; Settled: 4 &nbsp;&middot;&nbsp; Logged: 2</div>
 
   <div class="stats">
     <div class="stat">
       <div class="stat-label">Open</div>
-      <div class="stat-value" style="color:#60a5fa">0</div>
+      <div class="stat-value" style="color:#60a5fa">2</div>
     </div>
     <div class="stat">
       <div class="stat-label">Won</div>
@@ -51,613 +60,1259 @@
     </div>
     <div class="stat">
       <div class="stat-label">Lost</div>
-      <div class="stat-value" style="color:#ef4444">65</div>
+      <div class="stat-value" style="color:#ef4444">69</div>
     </div>
     <div class="stat">
       <div class="stat-label">Win Rate</div>
-      <div class="stat-value" style="color:#a78bfa">32%</div>
+      <div class="stat-value" style="color:#a78bfa">31%</div>
     </div>
     <div class="stat">
       <div class="stat-label">Total P&amp;L</div>
-      <div class="stat-value" style="color:#ef4444">$-46.17</div>
+      <div class="stat-value" style="color:#ef4444">$-48.89</div>
     </div>
     <div class="stat">
       <div class="stat-label">If Open Wins</div>
-      <div class="stat-value" style="color:#34d399">$+0.00</div>
+      <div class="stat-value" style="color:#34d399">$+14.06</div>
     </div>
   </div>
 
-  <h2>Open Trades (0)</h2>
+  <h2>Open Trades (2)</h2>
   <table>
     <thead><tr>
-      <th>City</th><th>Condition</th><th>Forecast</th>
+      <th>Placed</th><th>City</th><th>For</th><th>Condition</th><th>Forecast</th>
       <th>Side</th><th>Entry</th><th>Edge</th><th>If Win</th><th>Closes In</th>
     </tr></thead>
-    <tbody><tr><td colspan="8" style="text-align:center;color:#64748b;padding:20px">No open trades</td></tr></tbody>
+    <tbody><tr>
+          <td style="color:#94a3b8;font-size:12px">05/31 06:56</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-31</td>
+          <td>>75.0F</td>
+          <td>78F / 83.0F</td>
+          <td style="color:#22c55e;font-weight:600">YES</td>
+          <td>10c</td>
+          <td style="color:#facc15">82c</td>
+          <td style="color:#34d399;font-weight:600">$+8.21</td>
+          <td style="color:#94a3b8">25h 1m</td>
+        </tr><tr>
+          <td style="color:#94a3b8;font-size:12px">05/31 06:57</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-31</td>
+          <td><74.0F</td>
+          <td>64F / 67.7F</td>
+          <td style="color:#22c55e;font-weight:600">YES</td>
+          <td>35c</td>
+          <td style="color:#facc15">58c</td>
+          <td style="color:#34d399;font-weight:600">$+5.85</td>
+          <td style="color:#94a3b8">23h 1m</td>
+        </tr></tbody>
   </table>
 
-  <h2>Settled Trades (96)</h2>
+  <h2>Settled Trades (100)</h2>
   <table>
     <thead><tr>
-      <th>City</th><th>Condition</th><th>Side</th>
-      <th>Result</th><th>Outcome</th><th>P&amp;L</th><th>Mode</th>
+      <th>Placed</th><th>Settled</th><th>City</th><th>For</th><th>Condition</th><th>Side</th>
+      <th>NWS</th><th>Actual</th><th>Result</th><th>Outcome</th><th>P&amp;L</th>
     </tr></thead>
     <tbody><tr>
-          <td>LAX</td><td>>76.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/25 02:26</td>
+          <td style="color:#94a3b8;font-size:12px">05/31 06:52</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-25</td>
+          <td>>70.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">72°F</td>
+          <td style="color:#a78bfa">69.00°F</td>
+          <td>NO</td>
+          <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
+          <td style="color:#ef4444;font-weight:600">$-0.40</td>
+        </tr><tr>
+          <td style="color:#94a3b8;font-size:12px">05/25 02:26</td>
+          <td style="color:#94a3b8;font-size:12px">05/31 06:52</td>
+          <td>DEN</td>
+          <td style="color:#94a3b8">05-25</td>
+          <td>>87.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">86°F</td>
+          <td style="color:#a78bfa">85.00°F</td>
+          <td>NO</td>
+          <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
+          <td style="color:#ef4444;font-weight:600">$-0.16</td>
+        </tr><tr>
+          <td style="color:#94a3b8;font-size:12px">05/25 02:26</td>
+          <td style="color:#94a3b8;font-size:12px">05/31 06:52</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-25</td>
+          <td><82.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">73°F</td>
+          <td style="color:#a78bfa">84.00°F</td>
+          <td>NO</td>
+          <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
+          <td style="color:#ef4444;font-weight:600">$-1.24</td>
+        </tr><tr>
+          <td style="color:#94a3b8;font-size:12px">05/25 02:26</td>
+          <td style="color:#94a3b8;font-size:12px">05/31 06:52</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-25</td>
+          <td><72.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">69°F</td>
+          <td style="color:#a78bfa">73.00°F</td>
+          <td>NO</td>
+          <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
+          <td style="color:#ef4444;font-weight:600">$-0.92</td>
+        </tr><tr>
+          <td style="color:#94a3b8;font-size:12px">05/19 20:31</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 13:57</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-20</td>
+          <td>>76.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">81°F</td>
+          <td style="color:#a78bfa">77.00°F</td>
           <td>YES</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+3.01</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>MIA</td><td>>91.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/19 19:03</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 13:57</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-20</td>
+          <td>>91.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">85°F</td>
+          <td style="color:#a78bfa">88.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.07</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>CHI</td><td><57.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/19 19:03</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 13:57</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-20</td>
+          <td><57.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">51°F</td>
+          <td style="color:#a78bfa">61.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-1.10</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>DEN</td><td>>61.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/19 20:31</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 13:57</td>
+          <td>DEN</td>
+          <td style="color:#94a3b8">05-20</td>
+          <td>>61.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">58°F</td>
+          <td style="color:#a78bfa">58.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.24</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>DEN</td><td><54.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/19 20:31</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 13:57</td>
+          <td>DEN</td>
+          <td style="color:#94a3b8">05-20</td>
+          <td><54.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">58°F</td>
+          <td style="color:#a78bfa">58.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.15</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>NY</td><td>>96.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/19 20:31</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 13:57</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-20</td>
+          <td>>96.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">87°F</td>
+          <td style="color:#a78bfa">92.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.10</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>NY</td><td><89.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/19 20:31</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 13:57</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-20</td>
+          <td><89.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">87°F</td>
+          <td style="color:#a78bfa">92.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.09</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>LAX</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 16:19</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-15</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">73°F</td>
+          <td style="color:#a78bfa">68.00°F</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+5.20</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>DEN</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 16:19</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>DEN</td>
+          <td style="color:#94a3b8">05-15</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">85°F</td>
+          <td style="color:#a78bfa">83.00°F</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+3.60</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>MIA</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 16:19</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-15</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">86°F</td>
+          <td style="color:#a78bfa">93.00°F</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+4.50</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>MIA</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 16:19</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-15</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">86°F</td>
+          <td style="color:#a78bfa">93.00°F</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+2.20</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>CHI</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 16:19</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-15</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">72°F</td>
+          <td style="color:#a78bfa">76.00°F</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+2.50</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>CHI</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 16:19</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-15</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">72°F</td>
+          <td style="color:#a78bfa">76.00°F</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+3.30</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>NY</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 16:19</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-15</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">62°F</td>
+          <td style="color:#a78bfa">66.00°F</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+1.30</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>NY</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 16:19</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-15</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">62°F</td>
+          <td style="color:#a78bfa">66.00°F</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+4.40</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>LAX</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 17:44</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-15</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">73°F</td>
+          <td style="color:#a78bfa">68.00°F</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+2.00</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>DEN</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/15 13:08</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>DEN</td>
+          <td style="color:#94a3b8">05-16</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">82°F</td>
+          <td style="color:#a78bfa">78.00°F</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+3.10</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>DEN</td><td><67.0F</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/16 20:02</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>DEN</td>
+          <td style="color:#94a3b8">05-17</td>
+          <td><67.0F</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">70°F</td>
+          <td style="color:#a78bfa">68.00°F</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+3.41</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>LAX</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 16:19</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-15</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">73°F</td>
+          <td style="color:#a78bfa">68.00°F</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-8.00</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>DEN</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 16:19</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>DEN</td>
+          <td style="color:#94a3b8">05-15</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">85°F</td>
+          <td style="color:#a78bfa">83.00°F</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-6.40</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>MIA</td><td>>92.0F</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 16:19</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-15</td>
+          <td>>92.0F</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">86°F</td>
+          <td style="color:#a78bfa">93.00°F</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-7.20</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>NY</td><td><65.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 16:19</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-15</td>
+          <td><65.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">62°F</td>
+          <td style="color:#a78bfa">66.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.40</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>NY</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 16:19</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-15</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">62°F</td>
+          <td style="color:#a78bfa">66.00°F</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-7.30</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>CHI</td><td><71.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 17:44</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-15</td>
+          <td><71.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">72°F</td>
+          <td style="color:#a78bfa">76.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-2.80</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>LAX</td><td>>74.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 20:41</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-15</td>
+          <td>>74.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">73°F</td>
+          <td style="color:#a78bfa">68.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.30</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>DEN</td><td>>84.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/15 13:08</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>DEN</td>
+          <td style="color:#94a3b8">05-16</td>
+          <td>>84.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">82°F</td>
+          <td style="color:#a78bfa">78.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.40</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>CHI</td><td>>88.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/15 13:08</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-16</td>
+          <td>>88.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">82°F</td>
+          <td style="color:#a78bfa">83.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.40</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>CHI</td><td><81.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/15 13:08</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-16</td>
+          <td><81.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">82°F</td>
+          <td style="color:#a78bfa">83.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-1.30</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>NY</td><td>>83.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/15 13:08</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-16</td>
+          <td>>83.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">77°F</td>
+          <td style="color:#a78bfa">80.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.60</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>NY</td><td><76.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/15 13:08</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-16</td>
+          <td><76.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">77°F</td>
+          <td style="color:#a78bfa">80.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.50</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>MIA</td><td>>91.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/15 23:59</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-16</td>
+          <td>>91.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">85°F</td>
+          <td style="color:#a78bfa">90.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.80</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>MIA</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/15 23:59</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-16</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">85°F</td>
+          <td style="color:#a78bfa">90.00°F</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-6.80</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>LAX</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/16 01:12</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-16</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">71°F</td>
+          <td style="color:#a78bfa">70.00°F</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-6.80</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>LAX</td><td>>72.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/16 15:56</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-16</td>
+          <td>>72.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">71°F</td>
+          <td style="color:#a78bfa">70.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.17</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>MIA</td><td>>90.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/16 17:53</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-17</td>
+          <td>>90.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">84°F</td>
+          <td style="color:#a78bfa">87.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.06</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>NY</td><td>>90.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/16 18:52</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-17</td>
+          <td>>90.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">81°F</td>
+          <td style="color:#a78bfa">87.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.13</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>NY</td><td><83.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/16 18:52</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-17</td>
+          <td><83.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">81°F</td>
+          <td style="color:#a78bfa">87.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.14</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>DEN</td><td>>74.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/16 20:02</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>DEN</td>
+          <td style="color:#94a3b8">05-17</td>
+          <td>>74.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">70°F</td>
+          <td style="color:#a78bfa">68.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.14</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>CHI</td><td><84.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/16 20:49</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-17</td>
+          <td><84.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">81°F</td>
+          <td style="color:#a78bfa">87.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.67</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>LAX</td><td>>73.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/16 21:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-17</td>
+          <td>>73.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">70°F</td>
+          <td style="color:#a78bfa">71.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.34</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>LAX</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/17 19:05</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-17</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">71°F</td>
+          <td style="color:#a78bfa">71.00°F</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-2.65</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>MIA</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/17 19:05</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-17</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">85°F</td>
+          <td style="color:#a78bfa">87.00°F</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-2.21</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>CHI</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/17 19:05</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-17</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">82°F</td>
+          <td style="color:#a78bfa">87.00°F</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-3.06</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>LAX</td><td>>76.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/18 01:32</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-18</td>
+          <td>>76.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">76°F</td>
+          <td style="color:#a78bfa">71.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.24</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>DEN</td><td><50.0F</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/18 05:44</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>DEN</td>
+          <td style="color:#94a3b8">05-18</td>
+          <td><50.0F</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">45°F</td>
+          <td style="color:#a78bfa">44.00°F</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.23</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>MIA</td><td><84.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/18 05:44</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-18</td>
+          <td><84.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">85°F</td>
+          <td style="color:#a78bfa">87.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.12</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>NY</td><td>>84.0F</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/18 05:44</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-18</td>
+          <td>>84.0F</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">81°F</td>
+          <td style="color:#a78bfa">88.00°F</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.35</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>CHI</td><td><82.0F</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/18 13:42</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-18</td>
+          <td><82.0F</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">80°F</td>
+          <td style="color:#a78bfa">80.00°F</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.55</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>CHI</td><td><78.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/18 18:30</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-19</td>
+          <td><78.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">80°F</td>
+          <td style="color:#a78bfa">79.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.29</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>LAX</td><td>>78.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/18 20:15</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-19</td>
+          <td>>78.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">80°F</td>
+          <td style="color:#a78bfa">75.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.23</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>LAX</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/18 20:15</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-18</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">76°F</td>
+          <td style="color:#a78bfa">71.00°F</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.96</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>NY</td><td>>96.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/18 21:49</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-19</td>
+          <td>>96.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">90°F</td>
+          <td style="color:#a78bfa">93.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.60</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>MIA</td><td><84.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/19 03:38</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-19</td>
+          <td><84.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">84°F</td>
+          <td style="color:#a78bfa">87.00°F</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.15</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>LAX</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/19 19:04</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-19</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">80°F</td>
+          <td style="color:#a78bfa">75.00°F</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.58</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>MIA</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/19 19:04</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-19</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">84°F</td>
+          <td style="color:#a78bfa">87.00°F</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-2.54</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>NY</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/19 19:04</td>
+          <td style="color:#94a3b8;font-size:12px">05/21 06:22</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-19</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">91°F</td>
+          <td style="color:#a78bfa">93.00°F</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.93</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px">paper</span></td>
         </tr><tr>
-          <td>DEN</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 16:19</td>
+          <td style="color:#94a3b8;font-size:12px">05/15 19:26</td>
+          <td>DEN</td>
+          <td style="color:#94a3b8">05-14</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">87°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.50</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>MIA</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/06 21:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 22:54</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-07</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">86°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+1.40</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>MIA</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/06 21:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 22:54</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-07</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">86°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+2.30</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>CHI</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/06 21:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 22:54</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-07</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">59°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+2.10</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>LAX</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/06 21:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 22:54</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-07</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">79°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+1.40</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>LAX</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/06 21:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 22:54</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-07</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">79°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+5.20</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>DEN</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/06 21:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 22:54</td>
+          <td>DEN</td>
+          <td style="color:#94a3b8">05-07</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">65°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+2.50</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>NY</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/06 21:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 22:54</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-07</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">61°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+2.50</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>MIA</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/06 21:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 22:54</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-07</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">86°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-4.50</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>CHI</td><td><58.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/06 21:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 22:54</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-07</td>
+          <td><58.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">59°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.90</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>CHI</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/06 21:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 22:54</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-07</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">59°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-5.10</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>LAX</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/06 21:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 22:54</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-07</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">79°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-7.30</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>DEN</td><td>>68.0F</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/06 21:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 22:54</td>
+          <td>DEN</td>
+          <td style="color:#94a3b8">05-07</td>
+          <td>>68.0F</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">65°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-5.30</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>NY</td><td><64.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/06 21:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 22:54</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-07</td>
+          <td><64.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">61°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-2.10</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>NY</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/06 21:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/14 22:54</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-07</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">61°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-4.80</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>LAX</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/03 16:19</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-04</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">68°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+4.20</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>LAX</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/03 16:19</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-04</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">68°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+3.80</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>CHI</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/03 16:20</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-04</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">79°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+1.80</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>CHI</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/03 16:20</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-04</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">79°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+2.70</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>NY</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/03 16:20</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-04</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">68°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+2.90</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>DEN</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/03 16:20</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>DEN</td>
+          <td style="color:#94a3b8">05-04</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">73°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+2.30</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>DEN</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/03 16:20</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>DEN</td>
+          <td style="color:#94a3b8">05-04</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">73°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+4.40</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>MIA</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/03 16:20</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-04</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">80°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+2.70</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>NY</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/05 01:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-05</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">77°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+3.30</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>LAX</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/05 01:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-05</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">66°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+2.60</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>MIA</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/05 01:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-05</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">83°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+5.20</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>CHI</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/05 01:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-05</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">57°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#166534;color:#bbf7d0;padding:2px 8px;border-radius:4px;font-size:12px">WIN</span></td>
           <td style="color:#22c55e;font-weight:600">$+3.30</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>CHI</td><td>>83.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/03 16:20</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-04</td>
+          <td>>83.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">79°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.40</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>CHI</td><td><76.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/03 16:20</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-04</td>
+          <td><76.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">79°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-1.10</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>CHI</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/03 16:20</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-04</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">79°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-6.80</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>NY</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/03 16:20</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-04</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">68°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-5.10</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>DEN</td><td>>75.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/03 16:20</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>DEN</td>
+          <td style="color:#94a3b8">05-04</td>
+          <td>>75.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">73°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.30</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>MIA</td><td><79.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/03 16:20</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-04</td>
+          <td><79.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">80°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.30</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>MIA</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/03 16:20</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-04</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">80°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-5.60</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>NY</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/05 01:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>NY</td>
+          <td style="color:#94a3b8">05-05</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">77°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-5.00</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>LAX</td><td><64.0F</td><td>YES</td>
+          <td style="color:#94a3b8;font-size:12px">05/05 01:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-05</td>
+          <td><64.0F</td>
+          <td>YES</td>
+          <td style="color:#64748b;font-size:12px">66°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>NO</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-0.30</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>LAX</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/05 01:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>LAX</td>
+          <td style="color:#94a3b8">05-05</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">66°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-4.60</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>MIA</td><td>>87.0F</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/05 01:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>MIA</td>
+          <td style="color:#94a3b8">05-05</td>
+          <td>>87.0F</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">83°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-7.30</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>CHI</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/05 01:50</td>
+          <td style="color:#94a3b8;font-size:12px">05/07 04:20</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-05</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">57°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-3.70</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr><tr>
-          <td>CHI</td><td>range</td><td>NO</td>
+          <td style="color:#94a3b8;font-size:12px">05/03 16:20</td>
+          <td style="color:#94a3b8;font-size:12px">05/04 21:32</td>
+          <td>CHI</td>
+          <td style="color:#94a3b8">05-03</td>
+          <td>range</td>
+          <td>NO</td>
+          <td style="color:#64748b;font-size:12px">66°F</td>
+          <td style="color:#a78bfa">—</td>
           <td>YES</td>
           <td><span style="background:#7f1d1d;color:#fecaca;padding:2px 8px;border-radius:4px;font-size:12px">LOSS</span></td>
           <td style="color:#ef4444;font-weight:600">$-1.20</td>
-          <td><span style="background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:3px;font-size:11px"></span></td>
         </tr></tbody>
   </table>
 
